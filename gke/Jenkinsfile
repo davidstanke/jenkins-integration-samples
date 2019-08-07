@@ -45,8 +45,9 @@ pipeline {
 		        // run tests
 		        sh "mvn verify"
 
-				sh "ls" // why is the jar not there?
 		        sh "cp target/cloudbees-days-seattle-demo-*.jar $APP_JAR"
+
+				sh "ls" // why is the jar not there?
 		        
 				// archive the build context for kaniko
 				// sh "tar --exclude='./.git' -zcvf /tmp/$BUILD_CONTEXT ."
